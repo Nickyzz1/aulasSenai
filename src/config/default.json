@@ -1,0 +1,3 @@
+{
+    "db" : "monbodb://localhost:27017"
+}
