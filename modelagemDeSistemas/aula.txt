@@ -9,3 +9,15 @@ modelagem
 
 
 uml é um forma de documentar sistemas, são diagramas
+
+obrigação include
+opção extend
+
+caso e usp:
+Representa todos os modos pelos quais o sistema pode ser utilizado
+pelos atores envolvidos.
+
+• Caso de Uso: Sequência de ações realizadas colaborativamente pelos
+atores e pelo sistema.
+• Resultado: Produz um resultado significativo (com valor) para os
+atores.
