@@ -1,8 +1,11 @@
 modelagem 
-- canvas
-- rfs e rnfs
-- prototipagem
-- uml :
-	- use case
+- canvas: aprendemios regra de negócios
+- RFs e RNFs : requisitos funcionais e não funcionais
+- prototipagem : como o sistema vai ser
+- uml(documentação do sistema passado para o cliente) : Ligado aos RF
+	- use case (diagrama de caso e uso)
 	- sequência
 	- classe
+
+
+uml é um forma de documentar sistemas, são diagramas
