@@ -1,5 +1,5 @@
 import express, {Request, Response, Router} from 'express'
-import { createTask, getTasks, deleteTask } from '../controllers/TaskController.ts'; // Corrigindo o import
+import { createTask, getTasks, deleteTask, updateTask } from '../controllers/TaskController.ts'; // Corrigindo o import
 
 const router : Router = express.Router();
 
@@ -17,7 +17,7 @@ router.delete('/task/:id', (req: Request, res: Response) => {
 });
 
 router.patch('/task/:id', (req: Request, res: Response) => {
-    getTasks(req, res); 
+    updateTask(req, res); 
 });
 
 
