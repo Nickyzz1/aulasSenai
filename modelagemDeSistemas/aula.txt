@@ -1,0 +1,23 @@
+modelagem 
+- canvas: aprendemios regra de negócios
+- RFs e RNFs : requisitos funcionais e não funcionais
+- prototipagem : como o sistema vai ser
+- uml(documentação do sistema passado para o cliente) : Ligado aos RF
+	- use case (diagrama de caso e uso)
+	- sequência
+	- classe
+
+
+uml é um forma de documentar sistemas, são diagramas
+
+obrigação include
+opção extend
+
+caso e usp:
+Representa todos os modos pelos quais o sistema pode ser utilizado
+pelos atores envolvidos.
+
+• Caso de Uso: Sequência de ações realizadas colaborativamente pelos
+atores e pelo sistema.
+• Resultado: Produz um resultado significativo (com valor) para os
+atores.
