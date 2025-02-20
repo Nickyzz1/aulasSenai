@@ -5,7 +5,7 @@ const router : Router = express.Router();
 
 interface IList extends Document {
     title: string;
-    description: string;
+    description: string[];
     completed: boolean;
     createdAt: Date;
     updatedAt: Date;
@@ -13,7 +13,7 @@ interface IList extends Document {
 
 const listSchema: Schema = new Schema({
     title : { type: String, required: true },
-    description: { type: String, required: true },
+    description: { type: [String], required: true },
     completed: { type: String, required: true },
     createdAt: { type: Date, required: true },
     updatedAt: { type: Date, required: true },

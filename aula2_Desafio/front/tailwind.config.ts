@@ -14,5 +14,10 @@ export default {
       },
     },
   },
+  fontFamily: 
+      {
+        robFont: "var(--roboto)" 
+      },
+  
   plugins: [],
 } satisfies Config;
