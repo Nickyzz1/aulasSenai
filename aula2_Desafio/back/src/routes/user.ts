@@ -1,24 +1,20 @@
-// import express, { Request, Response, Router } from 'express';
-// import { createTask, getTasks, deleteTask } from '../controllers/TaskController.ts'; // Corrigindo o import
+import express, { Request, Response, Router } from 'express';
+import { createUser, getUsers, deleteUser } from '../controllers/UserController.ts'; // Corrigindo o import
 
-// const router: Router = express.Router();
+const router: Router = express.Router();
 
-// // Rota POST para criar uma tarefa
-// router.post('/task', createTask);
+router.post('/register', createUser);
 
-// // Rota GET para obter todas as tarefas
-// router.get('/task', (req: Request, res: Response) => {
-//     getTasks(req, res); 
-// });
+router.get('/get', (req: Request, res: Response) => {
+    getUsers(req, res); 
+});
 
-// // Rota DELETE para excluir uma tarefa
-// router.delete('/task/:id', (req: Request, res: Response) => {
-//     deleteTask(req, res); 
-// });
+router.delete('/user/:id', (req: Request, res: Response) => {
+    deleteUser(req, res); 
+});
 
-// router.patch('/task/:id', (req: Request, res: Response) => {
-//     getTasks(req, res); 
-// });
+router.patch('/user/:id', (req: Request, res: Response) => {
+    // implementar
+});
 
-
-// export default router;
+export default router;

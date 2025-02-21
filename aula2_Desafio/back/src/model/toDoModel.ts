@@ -19,6 +19,6 @@ const listSchema: Schema = new Schema({
     updatedAt: { type: Date, required: true },
 });
 
-const Person = mongoose.model<IList>('Person', listSchema);
+const List = mongoose.model<IList>('List', listSchema);
 
-export default Person ;
+export default List ;

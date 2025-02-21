@@ -3,15 +3,12 @@ import { createTask, getTasks, deleteTask, updateTask } from '../controllers/Tas
 
 const router : Router = express.Router();
 
-// Rota POST para criar uma tarefa
 router.post('/task', createTask);
 
-// Rota GET para obter todas as tarefas
 router.get('/task', (req: Request, res: Response) => {
     getTasks(req, res); 
 });
 
-// Rota DELETE para excluir uma tarefa
 router.delete('/task/:id', (req: Request, res: Response) => {
     deleteTask(req, res); 
 });
@@ -19,6 +16,5 @@ router.delete('/task/:id', (req: Request, res: Response) => {
 router.patch('/task/:id', (req: Request, res: Response) => {
     updateTask(req, res); 
 });
-
 
 export default router;

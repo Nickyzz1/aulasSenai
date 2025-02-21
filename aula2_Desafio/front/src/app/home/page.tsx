@@ -21,10 +21,10 @@ export default function Home() {
 
   return (
     <>
-      <div className="flex h-screen gap-3 p-6">
+      <div className="flex h-screen gap-3 p-6 bg-gray-50">
         <div className="bg-gray-200 rounded-lg w-4/12 flex items-center flex-col">
           <div className="flex items-center">
-            <p className="text-3xl font-extrabold m-6">Menu</p>
+            <p className="text-3xl font-extrabold m-6 text-black ">Menu</p>
             <Image width={200} height={200} alt="setting icons" src={settings} className="w-6 h-6 cursor-pointer" onClick={() => setOpen(true)} />
           </div>
           <input className="rounded-md p-2 w-11/12" type="text" placeholder="Search"/>
@@ -38,7 +38,7 @@ export default function Home() {
         </div>
 
         <div className="bg-gray-300 rounded-lg w-full">
-          <h1 className="text-3xl font-extrabold m-6">20 de fevereiro de 2025</h1> 
+          <h1 className="text-3xl font-extrabold m-6 text-black">20 de fevereiro de 2025</h1> 
           <TaskCardList items={data} />
         </div>
       </div>

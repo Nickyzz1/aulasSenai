@@ -1,39 +1,51 @@
 import { Request, Response, NextFunction } from 'express';
-import userModel from '../model/userModel.ts';
+import CryptoJS from 'crypto-js';
+import userModel from '../model/userModel.ts'; 
+import dotenv from 'dotenv'
 
-export const createUser = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+dotenv.config();
+
+export const createUser = async (req: Request, res: Response): Promise<void> => {
   try {
     const { name, email, pass } = req.body;
 
     if (!name || !email || !pass) {
-      res.status(400).send("Não autorizado! Informações faltantes.");
+      res.status(400).send("Informações faltando: nome, e-mail ou senha.");
       return;
     }
 
-    const newUser = new userModel({ name, email, pass });
+    const passHash = CryptoJS.AES.encrypt(pass, process.env.SECRET as string).toString();
+
+    const existingUser = await userModel.findOne({ email });
+    if (existingUser) {
+      res.status(400).send("E-mail já registrado.");
+      return;
+    }
+
+    const newUser = new userModel({ name, email, pass:passHash });
+
     await newUser.save();
 
     res.status(201).send(`Pessoa linda ${name} criada com sucesso!`);
+    
   } catch (error) {
-    next(error); 
-    res.status(500).send("Internal server error");
-  }
+    console.error(error);
+  }''
 };
 
-export const getUsers = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+export const getUsers = async (req: Request, res: Response): Promise<void> => {
     try {
-      const users = await userModel.find(); // Encontrar todos os usuários no banco de dados
-        res.status(200).json(users); // Retorna os usuários como resposta
+      const users = await userModel.find();
+        res.status(200).json(users); 
     } catch (error) {
-      next(error); // Passa o erro para o middleware de tratamento de erros
+      
     }
   };
   
-  // Função para excluir um usuário (DELETE)
-export const deleteUser = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+export const deleteUser = async (req: Request, res: Response): Promise<void> => {
     try {
-      const userId = req.params.id; // Pega o ID do usuário da URL
-      const deletedUser = await userModel.findByIdAndDelete(userId); // Exclui o usuário pelo ID
+      const userId = req.params.id; 
+      const deletedUser = await userModel.findByIdAndDelete(userId); 
   
       if (!deletedUser) {
         res.status(404).send("Usuário não encontrado.");
@@ -41,6 +53,6 @@ export const deleteUser = async (req: Request, res: Response, next: NextFunction
   
       res.status(200).send(`Usuário ${userId} excluído com sucesso!`);
     } catch (error) {
-      next(error); // Passa o erro para o middleware de tratamento de erros
+      
     }
 };

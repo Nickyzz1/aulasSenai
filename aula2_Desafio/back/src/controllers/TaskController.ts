@@ -39,19 +39,16 @@ export const deleteTask = async (req: Request, res: Response): Promise<void> => 
       res.status(200).send(`Usuário ${taskId} excluído com sucesso!`);
     } catch (error) {
       res.status(500).send('Internal server error')
-
     }
 };
-
 
 export const updateTask = async (req: Request, res: Response): Promise<any> => {
   const { id } = req.params; 
   const { title, description, completed } = req.body; 
 
-  console.log('ID recebido na requisição:', id);  // Log para verificar o ID
+  console.log('ID recebido na requisição:', id); 
 
   try {
-    // Usando ObjectId para procurar a tarefa corretamente
     const updatedTask = await taskModel.findByIdAndUpdate(
       new mongoose.Types.ObjectId(id), // Aqui usamos o ObjectId corretamente
       {
@@ -62,10 +59,10 @@ export const updateTask = async (req: Request, res: Response): Promise<any> => {
           updatedAt: new Date() 
         }
       },
-      { new: true } // Retorna o documento atualizado
+      { new: true } 
     );
 
-    console.log('Tarefa atualizada:', updatedTask);  // Log para verificar a tarefa retornada
+    console.log('Tarefa atualizada:', updatedTask); 
 
     if (!updatedTask) {
       return res.status(404).send('Tarefa não encontrada');
@@ -74,7 +71,7 @@ export const updateTask = async (req: Request, res: Response): Promise<any> => {
     return res.status(200).send("Atualizado com sucesso!");
 
   } catch (error) {
-    console.error('Erro ao atualizar tarefa:', error); // Log para verificar o erro
+    console.error('Erro ao atualizar tarefa:', error); 
     return res.status(500).send('Erro ao atualizar tarefa');
   }
 };
