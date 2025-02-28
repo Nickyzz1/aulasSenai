@@ -1,8 +1,6 @@
 import { Request, Response, NextFunction, json } from 'express';
 import taskModel from '../model/toDoModel.ts';
-import mongoose from 'mongoose';
-
-export const createTask = async (req: Request, res: Response): Promise<void> => {
+import mongoose from 'mongoose'; export const createTask = async (req: Request, res: Response): Promise<void> => {
   try {
     const {title, description, completed, createdAt, updatedAt } = req.body;
 

@@ -1,9 +1,8 @@
 import express, { Request, Response, Router } from 'express';
-import { createUser, getUsers, deleteUser } from '../controllers/UserController.ts'; // Corrigindo o import
+import { getUsers, deleteUser } from '../controllers/UserController.ts'; // Corrigindo o import
+import {validateLogin, validadeRegister} from '../middlewares/authMiddleware.ts'
 
 const router: Router = express.Router();
-
-router.post('/register', createUser);
 
 router.get('/get', (req: Request, res: Response) => {
     getUsers(req, res); 
