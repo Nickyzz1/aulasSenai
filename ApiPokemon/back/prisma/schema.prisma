@@ -14,7 +14,7 @@ email String @unique
 createdAt DateTime @default(now())
 password String
 }
-// RARIDADE QUANTIDADE HABILIDADE OU CRY, GRITO
+// RARIDADE QUANTIDADE HABILIDADE OU CRY, GRITO, expereincia base
 model Task {
 id Int @id @default(autoincrement())
 title String
