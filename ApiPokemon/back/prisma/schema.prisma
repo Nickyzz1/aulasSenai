@@ -1,0 +1,89 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+id Int @id @default(autoincrement())
+name String
+email String @unique
+createdAt DateTime @default(now())
+password String
+}
+// RARIDADE QUANTIDADE HABILIDADE OU CRY, GRITO, expereincia base
+model Task {
+id Int @id @default(autoincrement())
+title String
+description String
+completed Boolean
+createdAt DateTime
+updatedAt DateTime
+}
+
+// // Para cada veículo, é necessário manter registros detalhados, incluindo
+// // marca, modelo, ano e placa.
+
+// model Client {
+// id Int @id @default(autoincrement())
+// name String
+// phone String 
+// adress ClientToAdress[]
+// vehicles Vehicle[]
+// }
+
+// model Adress {
+// id Int @id @default(autoincrement())
+// street String
+// number Int
+// client ClientToAdress[]
+// }
+
+// model ClientToAdress {
+// id Int @id @default(autoincrement())
+// client Client @relation(fields: [idClient], references: [id])
+// idClient Int @unique
+// adress Adress @relation(fields: [idAdress], references: [id])
+// idAdress Int @unique
+// }
+
+// model Vehicle {
+// id Int @id @default(autoincrement())
+// description String
+// brand String 
+// model String
+// year String
+// plate String
+// owner Client @relation(fields: [idOwner], references: [id])
+// idOwner Int
+// service ServiceOrder[]
+// }
+
+// model Service {
+// id Int @id @default(autoincrement())
+// description String
+// price Decimal 
+// servideOrder ServiceToServiceOrder[]
+// }
+
+// model ServiceOrder {
+// id Int @id @default(autoincrement())
+// vehicle Vehicle @relation(fields: [idVehicle], references: [id])
+// idVehicle Int
+// entryDate DateTime
+// outDate DateTime
+// status String
+// aditions String
+// services ServiceToServiceOrder[]
+// }
+
+// model ServiceToServiceOrder {
+// id Int @id @default(autoincrement())
+// serviceOrder ServiceOrder @relation(fields: [idServiceOrder], references: [id])
+// idServiceOrder Int
+// service Service @relation(fields: [idService], references: [id])
+// idService Int
+// }

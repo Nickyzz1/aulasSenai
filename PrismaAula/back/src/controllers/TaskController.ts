@@ -1,10 +1,13 @@
 import { Request, Response, NextFunction, json } from 'express';
-import taskModel from '../model/toDoModel.ts';
-import mongoose from 'mongoose'; export const createTask = async (req: Request, res: Response): Promise<void> => {
+import {ITask} from '../model/task.ts';
+import mongoose from 'mongoose';
+ export const createTask = async (req: Request, res: Response): Promise<void> => {
+  
+export const createTask = (taskData : ITask)  => { 
   try {
     const {title, description, completed, createdAt, updatedAt } = req.body;
 
-    const newTask = new taskModel({title, description, completed, createdAt, updatedAt });
+    const newTask = new ITask({title, description, completed, createdAt, updatedAt });
     await newTask.save();
 
     res.status(201).send(`tarefa criada com sucesso!`);
@@ -17,7 +20,7 @@ import mongoose from 'mongoose'; export const createTask = async (req: Request, 
 
 export const getTasks = async (req: Request, res: Response): Promise<void> => {
     try {
-      const tasks = await taskModel.find(); // Encontrar todos os usuários no banco de dados
+      const tasks = await ITask.find(); // Encontrar todos os usuários no banco de dados
         res.status(200).json(tasks); // Retorna os usuários como resposta
     } catch (error) {
       res.status(404).send('Not found')
@@ -28,7 +31,7 @@ export const deleteTask = async (req: Request, res: Response): Promise<void> => 
     try {
       const taskId = req.params.id; 
   
-      const deleteTask = await taskModel.findByIdAndDelete(taskId); // Exclui o usuário pelo ID
+      const deleteTask = await ITask.findByIdAndDelete(taskId); // Exclui o usuário pelo ID
   
       if (!deleteTask) {
         res.status(404).send("Usuário não encontrado.");
@@ -47,7 +50,7 @@ export const updateTask = async (req: Request, res: Response): Promise<any> => {
   console.log('ID recebido na requisição:', id); 
 
   try {
-    const updatedTask = await taskModel.findByIdAndUpdate(
+    const updatedTask = await ITask.findByIdAndUpdate(
       new mongoose.Types.ObjectId(id), // Aqui usamos o ObjectId corretamente
       {
         $set: {
