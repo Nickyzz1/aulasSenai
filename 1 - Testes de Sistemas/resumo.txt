@@ -1,0 +1,7 @@
+NÍVEIS E TIPOS DE TESTES
+ 
+DIFERENÇA ENTRE ERRO, DEFEITO E FALHA
+
+- ERRO: ação humanda que produz resultado incorreto
+- DEFEITO: manifestação de um erro no software
+- FALHA: Sistema se comporta de forma inesperada devido ao defeito
