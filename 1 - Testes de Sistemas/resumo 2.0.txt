@@ -1,0 +1,238 @@
+🧠 CONCEITOS BÁSICOS
+🔍 Verificação x ✅ Validação
+
+Verificação: "Fizemos certo?" — foco no processo, documentação, código. (ex: revisão de código)
+
+Validação: "Fizemos a coisa certa?" — foco no produto final e se ele atende o usuário.
+
+🐞 ERRO, DEFEITO E FALHA
+Erro: Ação humana errada (ex: dev erra no código)
+
+Defeito: Resultado do erro no software
+
+Falha: Quando o sistema se comporta de forma inesperada por causa do defeito
+
+🧪 NÍVEIS DE TESTE
+Teste de Unidade: testa uma função/método isolado.
+🔧 Estrutura: Arrange (prepara), Act (executa), Assert (verifica)
+
+Teste de Integração: verifica se os módulos funcionam juntos
+Tipos: Big Bang, Top-Down, Bottom-Up, Sanduíche
+
+Teste de Sistema: testa o sistema completo
+Tipos:
+
+Funcional (funções)
+
+Não-funcional (desempenho, usabilidade...)
+
+Interface (entre sistemas)
+
+Teste de Aceitação: feito pelo cliente ou usuário
+Tipos: UAT, Operacional, Formal
+
+Teste Alfa: interno, em ambiente controlado
+
+Teste Beta: externo, com usuários reais
+
+Teste de Regressão: garante que uma mudança não quebrou o que já funcionava
+
+🛠️ TIPOS DE TESTES
+Funcionalidade: testam os requisitos funcionais
+
+Interface: testam a usabilidade, botões, menus
+
+Desempenho: testam tempo de resposta, stress e carga
+
+Usabilidade: testam a experiência do usuário
+
+Segurança: testam vulnerabilidades (SQLi, XSS...)
+
+⚙️ TESTES MANUAIS vs AUTOMATIZADOS
+✅ Manuais:
+Feitos na mão
+
+Bom pra testes exploratórios e visuais
+
+Boas práticas:
+
+Documentar tudo
+
+Fazer testes exploratórios
+
+Se comunicar com o time
+
+🤖 Automatizados:
+Rápidos, reutilizáveis, cobrem mais casos
+
+Usam ferramentas
+
+Ferramentas comuns:
+
+Selenium, JUnit, Cypress, Pytest, JMeter, Jenkins
+
+🧠 TÉCNICAS DE TESTE
+📦 Caixa Preta:
+Foca nas entradas e saídas, sem olhar o código
+(ex: simular uso do sistema)
+
+⚪ Caixa Branca:
+Foca na lógica interna do código
+(ex: testar todos os caminhos de decisão)
+
+🧭 CRITÉRIOS DE TESTE
+Aceitação: sistema atende os requisitos?
+
+Entrada: ambiente de teste pronto?
+
+Saída: testes críticos foram feitos e bugs corrigidos?
+
+Cobertura: quanto do código foi testado?
+
+🌐 VISÃO SISTÊMICA
+Testar o sistema como parte de algo maior
+
+Testar dependências, integração, segurança, UX, performance, escalabilidade, conformidade
+
+💼 PAPÉIS EM TESTE DE SOFTWARE
+Testador: executa testes
+
+Analista de Testes: cria e planeja testes
+
+Eng. de Automação: faz scripts automáticos
+
+Eng. de Performance/Security: foca em desempenho e segurança
+
+Test Manager: gerencia tudo
+
+QA Analyst: garante qualidade nos processos
+
+DevOps com foco em QA: integra testes no CI/CD
+
+🧪 TÉCNICAS COMUNS
+Teste de Caminhos/Comandos/Condições
+
+Teste baseado em caso de uso
+
+Teste de valores e limites (evita bugs como o do foguete Ariane 5)
+
+
+
+
+
+
+
+💡 PRIMEIRO DE TUDO: O QUE SÃO TESTES DE SISTEMA?
+Imagina que você tá criando um app… antes de lançar, você precisa ter certeza que tudo funciona certinho: botão clica, tela carrega, dados vão e voltam sem erro, etc.
+
+É aí que entram os testes! Eles servem pra:
+
+Ver se o sistema funciona
+
+Ver se o que você fez realmente resolve o problema do usuário
+
+E se nada quebra quando você mexe em algo
+
+🔍 VERIFICAÇÃO x ✅ VALIDAÇÃO (parecem iguais, mas são diferentes)
+
+Verificação	Validação
+“Fizemos certo?”	“Fizemos a coisa certa?”
+Vê se o código tá de acordo com o projeto	Vê se resolve o problema do usuário
+Acontece durante o desenvolvimento	Acontece no final, com o sistema pronto
+Ex: revisão de código, teste de unidade	Ex: teste de aceitação, teste de sistema
+🐛 ERRO, DEFEITO, FALHA – QUAL A DIFERENÇA?
+Erro: você, programadora, escreve algo errado sem querer
+
+Defeito (bug): esse erro vira um probleminha no código
+
+Falha: o sistema se comporta de forma errada por causa desse bug
+
+Exemplo real: O foguete Ariane 5 explodiu porque tentaram converter um número gigante pra um tipo menor (64 bits → 16 bits). Boom 💥
+
+🧪 TIPOS DE TESTE – como se fossem etapas
+Pensa como um funil, começa pequeno e vai ampliando:
+
+Teste de Unidade: Testa uma coisinha só (tipo uma função)
+
+Teste de Integração: Testa várias funções juntas
+
+Teste de Sistema: Testa o sistema inteiro funcionando
+
+Teste de Aceitação: Testa se o usuário tá feliz com o resultado
+
+Extras:
+
+Teste Alfa: feito pela equipe dev (dentro de casa)
+
+Teste Beta: feito por usuários reais (fora da empresa)
+
+Teste de Regressão: depois de arrumar algo, testamos pra ver se nada mais quebrou
+
+🧰 TIPOS DE TESTES – cada um olha uma coisa
+Funcional: funciona como o esperado?
+
+Interface: botão, tela, menu… responde direitinho?
+
+Desempenho: aguenta muitos usuários? tá rápido?
+
+Usabilidade: é fácil de usar? intuitivo?
+
+Segurança: tá protegido contra ataques?
+
+🧑‍💻 TESTE MANUAL vs TESTE AUTOMATIZADO
+Manual (você testa clicando, digitando, etc.)
+Bom pra testes mais visuais e exploratórios
+
+Pode ser cansativo e demorado
+
+Automatizado (escreve script, o PC testa pra você)
+Muito mais rápido
+
+Testa várias vezes sem erro humano
+
+Ideal pra testes repetitivos
+
+Ferramentas: Selenium, JUnit, Cypress, Pytest, JMeter, Jenkins
+
+📦 TESTE DE CAIXA BRANCA x PRETA
+
+Caixa Preta	Caixa Branca
+Não vê o código	Vê o código por dentro
+Testa só entrada e saída	Testa a lógica, os caminhos do código
+Ex: clicar num botão e ver se salva	Ex: testar se o if do código funciona certo
+🎯 CRITÉRIOS – quando parar de testar?
+Critério de entrada: posso começar o teste? (ex: ambiente tá pronto?)
+
+Critério de saída: posso parar o teste? (ex: tudo que era crítico passou?)
+
+Cobertura: testei o suficiente? (ex: 80% do código foi testado?)
+
+Aceitação: o cliente aceitou o resultado?
+
+🔁 VISÃO SISTÊMICA – ver o sistema como um todo
+O sistema se conecta com outros? Então testa essa integração!
+
+Ele precisa ser rápido, seguro e estável? Testa isso também!
+
+É fácil de usar? Tem que ver isso com teste de usabilidade!
+
+Tem que seguir leis ou normas? Teste de conformidade!
+
+Os dados passam certinho de uma tela pra outra? Testa o fluxo de dados!
+
+👩‍💼 QUEM FAZ O QUÊ NOS TESTES?
+Testador: executa os testes
+
+Analista de Testes: planeja os cenários de teste
+
+Eng. de Teste de Automação: cria os scripts automáticos
+
+Eng. de Performance: vê se o sistema aguenta o tranco
+
+Eng. de Segurança: caça falhas de segurança
+
+Test Manager: organiza tudo
+
+QA Analyst: cuida da qualidade desde o começo
+
+

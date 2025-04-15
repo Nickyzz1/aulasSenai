@@ -1,7 +1,183 @@
+PQ TESTAR ç Verificar se o comportamento de um
+determinado item está de acordo com o planejado.
+
+CONCEITO D ETESTE NO SOFTWARE: Garantir que uma entrada produza
+uma saída esperada.
+esperado.
+
+QUALIDADE : software atende às expectativas e requisitos definidos.
+ - Detecção de Defeitos:
+ - Verificação e Validação:
+ - Prevenção de Problemas:
+
+Critérios: são diretrizes ou condições usadas para
+determinar quando um teste foi bem-sucedido
+
+--------
+
+1. Critérios de Aceitação
+
+• Especificam as condições que um sistema ou
+componente deve atender para ser aceito pelos usuários
+finais ou pelos stakeholders.
+
+• Exemplo: O sistema deve processar um pedido em
+menos de 3 segundos em 95% das tentativas.
+
+--------
+
+2. Critérios de Saída (ou Critérios de Conclusão)
+
+• Condições que devem ser cumpridas para concluir a
+fase de teste ou liberar o software para a próxima fase
+do ciclo de vida.
+
+• Exemplo: Todos os casos de teste críticos foram
+executados com sucesso, e todos os defeitos de alta
+prioridade foram corrigidos.
+
+--------
+
+3. Critérios de Entrada
+
+• Condições que devem ser cumpridas antes que uma fase
+de teste possa começar.
+
+• Exemplo: O ambiente de teste está configurado
+corretamente, e as especificações de requisitos estão
+aprovadas.
+
+--------
+
+Visão sistêmica
+
+Capacidade de entender, analisar e testar o software
+considerando-o como parte de um ecossistema maior
+
+TEATADORES DE SOFTWARE: Executa testes manuais ou automatizados para identificar
+defeitos, documentar os resultados
+
+--------
+
 NÍVEIS E TIPOS DE TESTES
  
 DIFERENÇA ENTRE ERRO, DEFEITO E FALHA
 
-- ERRO: ação humanda que produz resultado incorreto
-- DEFEITO: manifestação de um erro no software
 - FALHA: Sistema se comporta de forma inesperada devido ao defeito
+- DEFEITO: manifestação de um erro no software
+- ERRO: ação humanda que produz resultado incorreto
+
+--------
+
+EXEMPLO:
+O fechamento não esperado de um programa --> FALHA (pode ser entendida como consequência.)
+Verifica que o defeito é um erro no acesso a memória --> DEFEITO (pode ser entendida como a causa)
+O programador colocou um valor de memória inválido --> Erro (pode ser entendido como o erro humano que causou o defeito)
+
+--------
+
+TÉCNICAS DE TESTES
+
+    - Teste de Cobertura 
+    - Teste de Caminhos 
+    - Teste de Comandos 
+    - Teste de Condições 
+    - Teste Caixa Preta
+
+--------
+
+NÍVEIS DE TESTE
+
+    - Teste de regressão: Utilizado para verificar se as alterações no código (pela
+    correção de bugs, melhorias ou novas funcionalidades)
+    não introduziram novos erros em partes já existentes.
+
+    QUANDO USAR: Após Correções de Bugs, Após Novas Implementações, Após Atualizações
+
+    - Teste beta: Nesta fase, o software é liberado para um grupo limitado
+    de usuários externos. O objetivo do teste beta é validar o software em um
+    ambiente real de uso,
+
+    - Teste Alfa: O teste alfa é a primeira fase de testes realizada em um produto, normalmente pelo time interno de
+    desenvolvimento e qualidade.
+
+    - Teste aceitação: O principal objetivo é validar se o software cumpre os requisitos funcionais e
+não funcionais.Procura atender às expectativas de usabilidade, desempenho, e confiabilidade.
+
+    - Teste de Sistema: Funcional, Não Funcional, De Interface;
+
+        TIPOS DE TESTES DE SISTEMA:
+            Funcional: Verifica se o sistema realiza as funções
+            especificadas corretamente.
+
+            Não Funcional: Avalia aspectos como desempenho,
+            usabilidade, segurança, e escalabilidade.
+
+            De Interface: Testa a interação entre diferentes sistemas
+            ou componentes.
+
+    - Teste de integração: verificam a interação entre componentes ou módulos do sistema para garantir que
+    eles funcionem juntos corretamente. O objetivo principal é identificar problemas que podem
+    surgir quando os módulos individuais, que já passaram por
+    testes unitários, são combinados.
+
+        TIPOS DE TESTES INTEGRAÇÃO:
+            - Big Bang: Todos os módulos são integrados de uma
+            vez e, em seguida, testados juntos.
+
+            - Top-Down: A integração começa com os módulos de
+            nível superior, descendo para os módulos de nível
+            inferior.
+
+        FERRAMENTAS: JUnit, Postman
+
+    - Teste de unidade: Verificação individual de componentes ou "unidades" do código, como funções, métodos ou classes
+
+            IMPORTANCIA:
+
+                - Detecção Precoce de Erros
+                - Facilitam a Manutenção
+                - Documentação Viva
+
+            ESTRUTURA: 
+
+            Um teste de unidade geralmente segue aestrutura AAA (Arrange, Act, Assert):
+                - Arrange (Preparar): Configure o ambiente e os
+                dados necessários para o teste.
+
+                - Act (Agir): Execute a unidade de código que você
+                deseja testar.
+
+                - Assert (Verificar): Verifique se o resultado obtido
+                corresponde ao resultado esperado.
+
+--------
+
+TIPOS DE TESTE 
+
+    - Teste de funcionalidade:Verificar se o software funciona conforme especificado nos
+    requisitos funcionais.
+
+    - Teste de interface: Verificar se a interface do usuário (UI) do software é intuitiva,
+    consistente e responde adequadamente às interações dos
+    usuários.
+
+    - Teste de desempenho: Avaliar como o sistema se comporta sob diferentes condições de
+    carga e uso, incluindo o tempo de resposta, a estabilidade e a
+    utilização de recursos (CPU, memória, etc.).
+
+    - Teste de Usabilidade: Avaliar a facilidade de uso do sistema e a experiência do usuário
+    (UX), assegurando que o software seja intuitivo, eficiente e
+    agradável de usar.
+
+    - Teste de segurança: Identificar e corrigir vulnerabilidades de segurança no sistema
+
+--------
+
+TESTES AUTOMATIZADOS                 VS                 TESTES MANUAIS
+
+- São testes realizados por                 - Executada manualmente sem ajuda de qualquer 
+meio de ferramentas e scripts               ferramentas de teste
+- Reusabilidade                             - Documentação
+- Velocidade
+- Cobertura Ampla
